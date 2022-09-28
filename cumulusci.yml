@@ -51,6 +51,20 @@ sources:
 
 
 tasks:
+    test_commit:
+        class_path: cumulusci.tasks.github.publish.PublishSubtree
+        description: This task tests CommitDir directly with a big ol' repository
+        group: 'wut'
+        options:
+            ref: commitdir-tests
+            branch: main
+            repo_url: https://github.com/jstvz/NPSP.git
+            include:
+                - force-app/
+                - orgs/
+                - unpackaged/pre/
+                - unpackaged/post/
+
     modify_xml_file:
         description: Make changes to an XML file
         group: Salesforce Metadata
